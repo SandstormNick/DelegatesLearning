@@ -17,3 +17,22 @@ The type of a delegate is defined by the name of the delegate. The following exa
 ```
  public delegate void Del(string message);
 ```
+
+Once a delegate is instantiated, a method call made to the delegate will be passed by the delegate to that method.
+The parameters passed to the delegate by the caller are passed to the method, and the return value, if any, from the method is returned to the caller by the delegate.
+This is known as invoking the delegate. An instantiated delegate can be invoked as if it were the wrapped method itself. For example:
+```
+// Create a method for a delegate.
+public static void DelegateMethod(string message)
+{
+    Console.WriteLine(message);
+}
+```
+
+```
+// Instantiate the delegate.
+Del handler = DelegateMethod;
+
+// Call the delegate.
+handler("Hello World");
+```
