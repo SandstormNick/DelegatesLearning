@@ -79,6 +79,19 @@ Del allMethodsDelegate = d1 + d2;
 allMethodsDelegate += d3;
 ```
 
+To remove a method from the invocation list, use the subtraction or subtraction assignment operators (- or -=). For example:
+```
+//remove Method1
+allMethodsDelegate -= d1;
+
+// copy AllMethodsDelegate while removing d2
+Del oneMethodDelegate = allMethodsDelegate - d2;
+```
+
+Multicast delegates are used extensively in event handling. 
+
+
+## Delegates with Named vs. Anonymous Methods
 
 
 
