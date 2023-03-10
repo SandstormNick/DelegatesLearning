@@ -93,6 +93,17 @@ Multicast delegates are used extensively in event handling.
 
 ## Delegates with Named vs. Anonymous Methods
 
+A delegate can be associated with a named method. When you instantiate a delegate by using a named method, the method is passed as a parameter, for example:
+```
+// Declare a delegate.
+delegate void Del(int x);
+
+// Define a named method.
+void DoWork(int k) { /* ... */ }
+
+// Instantiate the delegate using the method as a parameter.
+Del d = obj.DoWork;
+```
 
 
 
