@@ -104,6 +104,7 @@ void DoWork(int k) { /* ... */ }
 // Instantiate the delegate using the method as a parameter.
 Del d = obj.DoWork;
 ```
+This is called using a named method. Delegates constructed with a named method can encapsulate either a static method or an instance method.
 
 
 
