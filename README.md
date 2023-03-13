@@ -107,4 +107,43 @@ Del d = obj.DoWork;
 This is called using a named method. Delegates constructed with a named method can encapsulate either a static method or an instance method.
 
 
+## How to declare, instantiate, and use a Delegate
+
+You can declare delegates using any of the following methods:
+
+* Declare a delegate type and declare a method with a matching signature:
+```
+// Declare a delegate.
+delegate void Del(string str);
+
+// Declare a method with the same signature as the delegate.
+static void Notify(string name)
+{
+    Console.WriteLine($"Notification received for: {name}");
+}
+
+
+
+// Create an instance of the delegate.
+Del del1 = new Del(Notify);
+```
+
+* Assign a method group to a delegate type:
+```
+// C# 2.0 provides a simpler way to declare an instance of Del.
+Del del2 = Notify;
+```
+
+* Declare an anonymous method:
+```
+// Instantiate Del by using an anonymous method.
+Del del3 = delegate(string name)
+    { Console.WriteLine($"Notification received for: {name}"); };
+```
+
+* Use a lambda expression:
+```
+// Instantiate Del by using a lambda expression.
+Del del4 = name =>  { Console.WriteLine($"Notification received for: {name}"); };
+```
 
