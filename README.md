@@ -147,3 +147,34 @@ Del del3 = delegate(string name)
 Del del4 = name =>  { Console.WriteLine($"Notification received for: {name}"); };
 ```
 
+
+### Code run through of the BookDB project
+View the BookDB project in the solution that relates to the following bit of code.
+
+
+* Declaring a delegate.
+The following statement declares a new delegate type.
+```
+public delegate void ProcessBookCallback(Book book);
+```
+Each delegate type describes the number and types of the arguments, and the type of the return value of methods that it can encapsulate. 
+Whenever a new set of argument types or return value type is needed, a new delegate type must be declared.
+
+
+*Instantiating a delegate.
+After a delegate type has been declared, a delegate object must be created and associated with a particular method. 
+In the previous example, you do this by passing the ```PrintTitle``` method to the ```ProcessPaperbackBooks``` method as in the following example:
+```
+bookDB.ProcessPaperbackBooks(totaller.AddBookToTotal);
+```
+In both cases a new delegate object is passed to the ```ProcessPaperbackBooks``` method.
+
+After a delegate is created, the method it is associated with never changes; delegate objects are immutable.
+
+* Calling a delegate.
+After a delegate object is created, the delegate object is typically passed to other code that will call the delegate. 
+A delegate object is called by using the name of the delegate object, followed by the parenthesized arguments to be passed to the delegate. 
+Following is an example of a delegate call:
+```
+processBook(b);
+```
